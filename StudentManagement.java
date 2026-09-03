@@ -123,4 +123,32 @@ public static void displayallStudent() throws ClassNotFoundException, SQLExcepti
 	statement.close();
 }
 
+public static void main(String[] args) throws ClassNotFoundException, SQLException {
+	
+	boolean flag=true;
+	while(flag) {
+		System.out.println("------------ Student Management System------------");
+		System.out.println("1.Add Student");
+		System.out.println("2.Update Student");
+		System.out.println("3.remove student");
+		System.out.println("4.Display students");
+		System.out.println("5.Exit..");
+		System.out.println("Enter your choice: ");
+		int ch=sc.nextInt();
+		switch(ch) {
+		case 1-> addStudent();
+		case 2-> updateStudent();
+		case 3->removeStudent();
+		case 4-> displayallStudent();
+		case 5 -> { 
+			System.out.println("Thank You! Exiting..."); 
+			flag = false; 
+			} 
+		
+		default -> System.out.println("Invalid Choice! Please try again.");
+		}
+	}
+	
+}
+
 }  // ✅ StudentManagement class close
