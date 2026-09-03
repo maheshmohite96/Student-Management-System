@@ -103,4 +103,24 @@ public class StudentManagement {
 		con.close();
 	}
 
+
+// **************** DISPLAY ALL STUDENTS ****************
+public static void displayallStudent() throws ClassNotFoundException, SQLException {
+
+	PreparedStatement statement =
+			dbConnect().prepareStatement("select * from student");
+
+	ResultSet set = statement.executeQuery();
+
+	System.out.println("========== Student Details ============");
+	System.out.println("---------------------------------------------");
+
+	while(set.next()) {
+		System.out.println("|"+set.getInt(1)+"|"+set.getString(2)+"|"+set.getDouble(3)+"|"+set.getInt(4));
+		System.out.println("-------------------------------");
+	}
+
+	statement.close();
 }
+
+}  // ✅ StudentManagement class close
