@@ -8,7 +8,6 @@ import java.sql.SQLException;
 import java.util.Scanner;
 
 public class StudentManagement {
-<<<<<<< HEAD
 	
 	//*********** Dynamic Query ****************
 	
@@ -64,41 +63,6 @@ public class StudentManagement {
 			 
 		 }
 	 
-=======
->>>>>>> ef8b14056b3f228570858aefbe2f9fce3f1d953d
-
-	//*********** Dynamic Query ****************
-
-	static Scanner sc = new Scanner(System.in);
-
-	public static Connection dbConnect() throws ClassNotFoundException, SQLException {
-
-		Class.forName("com.mysql.cj.jdbc.Driver");
-		Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/jdbc", "root", "12345");
-
-		return connection;
-
-	}
-
-	// ****** ADD STUDENT ******
-	public static void addStudent() throws ClassNotFoundException, SQLException {
-
-		PreparedStatement prepareStatement = dbConnect().
-				prepareStatement("insert into student values (?,?,?,?)"); // dynamic Query
-		System.out.println("Enter Roll no: ");
-		prepareStatement.setInt(1, sc.nextInt());
-		System.out.println("Enter Name: ");
-		prepareStatement.setString(2, sc.next());
-		System.out.println("Enter Marks: ");
-		prepareStatement.setDouble(3, sc.nextDouble());
-		System.out.println("Enter age: ");
-		prepareStatement.setInt(4, sc.nextInt());
-
-		int result = prepareStatement.executeUpdate();
-		System.out.println("Qury Ok " + result + "rows affected");
-
-	}
-
 
 	// ************** UPDATE STUDENT **************
 	public static void updateStudent() throws ClassNotFoundException, SQLException {
