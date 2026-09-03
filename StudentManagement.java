@@ -41,6 +41,28 @@ public class StudentManagement {
 		 
 	 }
 	 
+	// ****** DELETE STUDENT ******
+	 public static void removeStudent() throws ClassNotFoundException, SQLException {
+			 
+		 Connection con = dbConnect(); 
+		 	System.out.println("Enter Roll no of Student to Remove: "); 
+		 	int rollNo = sc.nextInt(); 
+			PreparedStatement prepareStatement = con.prepareStatement( "DELETE FROM student WHERE id=?" ); 
+			prepareStatement.setInt(1, rollNo); 
+			int result = prepareStatement.executeUpdate(); 
+			 
+			if (result > 0) { 
+				System.out.println("Student Deleted Successfully!"); 
+			} 
+			 else 
+			{ 
+				System.out.println("Student Not Found!"); 
+			} 
+			 prepareStatement.close(); 
+			 con.close(); 
+			 
+		 }
+	 
 
 
 }
