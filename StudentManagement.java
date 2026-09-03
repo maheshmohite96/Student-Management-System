@@ -22,7 +22,7 @@ public class StudentManagement {
 		 
 	 }
 	 
-	// **************** ADD STUDENT ****************
+		// ****** ADD STUDENT ******
 	 public static void addStudent() throws ClassNotFoundException, SQLException{
 		 
 		 PreparedStatement prepareStatement = dbConnect().
